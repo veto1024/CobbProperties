@@ -1,0 +1,106 @@
+2018-01-10 02:24:46,642 ZID 17026600240 did not HTTP open
+Traceback (most recent call last):
+  File "C:/Users/Jonathan/Dropbox/PythonProjects/CobbProperties/zillowAnalysis.py", line 147, in <module>
+    prop[item].zillowEst(Requester=pageRequestMech,api=apiKey,proxy={'http':proxyUA[0]},UA=proxyUA[1],Mechanize=True)
+  File "residential.py", line 115, in zillowEst
+    zAPIopen=zAPIreq.req.open(url)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 254, in open
+    return self._mech_open(url_or_request, data, timeout=timeout)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 284, in _mech_open
+    response = UserAgentBase.open(self, request, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_opener.py", line 195, in open
+    response = urlopen(self, req, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 352, in _open
+    '_open', req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 340, in _call_chain
+    result = func(*args)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1188, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1160, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2018-01-10 02:25:27,654 ZID 16046400550 did not HTTP open
+Traceback (most recent call last):
+  File "C:/Users/Jonathan/Dropbox/PythonProjects/CobbProperties/zillowAnalysis.py", line 147, in <module>
+    prop[item].zillowEst(Requester=pageRequestMech,api=apiKey,proxy={'http':proxyUA[0]},UA=proxyUA[1],Mechanize=True)
+  File "residential.py", line 115, in zillowEst
+    zAPIopen=zAPIreq.req.open(url)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 254, in open
+    return self._mech_open(url_or_request, data, timeout=timeout)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 284, in _mech_open
+    response = UserAgentBase.open(self, request, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_opener.py", line 195, in open
+    response = urlopen(self, req, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 352, in _open
+    '_open', req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 340, in _call_chain
+    result = func(*args)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1188, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1160, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2018-01-10 02:26:08,654 ZID 16112400200 did not HTTP open
+Traceback (most recent call last):
+  File "C:/Users/Jonathan/Dropbox/PythonProjects/CobbProperties/zillowAnalysis.py", line 147, in <module>
+    prop[item].zillowEst(Requester=pageRequestMech,api=apiKey,proxy={'http':proxyUA[0]},UA=proxyUA[1],Mechanize=True)
+  File "residential.py", line 115, in zillowEst
+    zAPIopen=zAPIreq.req.open(url)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 254, in open
+    return self._mech_open(url_or_request, data, timeout=timeout)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 284, in _mech_open
+    response = UserAgentBase.open(self, request, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_opener.py", line 195, in open
+    response = urlopen(self, req, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 352, in _open
+    '_open', req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 340, in _call_chain
+    result = func(*args)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1188, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1157, in do_open
+    headers)
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 1042, in request
+    self._send_request(method, url, body, headers)
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 1082, in _send_request
+    self.endheaders(body)
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 1038, in endheaders
+    self._send_output(message_body)
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 882, in _send_output
+    self.send(msg)
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 844, in send
+    self.connect()
+  File "C:\Users\Jonathan\Anaconda2\lib\httplib.py", line 821, in connect
+    self.timeout, self.source_address)
+  File "C:\Users\Jonathan\Anaconda2\lib\socket.py", line 566, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+2018-01-10 02:26:49,664 ZID 17108500440 did not HTTP open
+Traceback (most recent call last):
+  File "C:/Users/Jonathan/Dropbox/PythonProjects/CobbProperties/zillowAnalysis.py", line 147, in <module>
+    prop[item].zillowEst(Requester=pageRequestMech,api=apiKey,proxy={'http':proxyUA[0]},UA=proxyUA[1],Mechanize=True)
+  File "residential.py", line 115, in zillowEst
+    zAPIopen=zAPIreq.req.open(url)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 254, in open
+    return self._mech_open(url_or_request, data, timeout=timeout)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_mechanize.py", line 284, in _mech_open
+    response = UserAgentBase.open(self, request, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_opener.py", line 195, in open
+    response = urlopen(self, req, data)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 352, in _open
+    '_open', req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 340, in _call_chain
+    result = func(*args)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1188, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "C:\Users\Jonathan\Anaconda2\lib\site-packages\mechanize\_urllib2_fork.py", line 1160, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2018-01-10 02:36:59,937 ZID 16098600240 did not HTTP open
+Traceback (most recent call last):
+  File "C:/Users/Jonathan/Dropbox/PythonProjects/CobbProperties/zillowAnalysis.py", line 147, in <module>
+    prop[item].zillowEst(Requester=pageRequestMech,api=apiKey,proxy={'http':proxyUA[0]},UA=proxyUA[1],Mechanize=True)
+  File "residential.py", line 152, in zillowEst
+    raise Exception("Root tree in ET unable to be parsed correctly")
+Exception: Root tree in ET unable to be parsed correctly
+2018-01-10 02:42:33,799 ZID 17055800800 does not have a zip code
