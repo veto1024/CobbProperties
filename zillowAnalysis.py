@@ -160,7 +160,7 @@ if __name__=="__main__":
                         zipFile.write(firstLine)
                         zipFile.flush()   
                 with open(str(prop[item].zipCode)+".dat","a") as matchFile:
-                    if months >=60:
+                    if months >=0:
                         print "ZID: "+prop[item].zID
                         print "Property: "+str(prop[item].address)
                         print "Zip Code: "+str(prop[item].zipCode)

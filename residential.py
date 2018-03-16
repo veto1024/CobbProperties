@@ -59,6 +59,9 @@ class resProp():
         self.propClass=propClass
         self.lastPrice=cobbPrice
         self.lastDate=lastDate
+        self.manual=False
+        self.zillowLat=0.
+        self.zillowLong=0.
     def zillowEst(self,Requester,api=ZAPI,proxy=False,UA=False,Mechanize=False):
         
 ###############################################################################
@@ -144,22 +147,35 @@ class resProp():
 #        for child in root[2][3]:
 #            print child.tag,child.attrib
         try:
-            root[2][3][0].text
+            self.zillowPrice=float(root[2][3][0].text)
         except:
             print "ZID = "+self.zID
             print "URL = "+url
             print "Address = "+self.address
+            self.manual=True
             raise Exception("Root tree in ET unable to be parsed correctly")
-        self.zillowPrice=float(root[2][3][0].text)
         
+         try:
+            self.zillowLat=float(root[2][1][5].text)
+            self.zillowLong=float(root[2][1][6].text)
+            print "lat/long = "+str(self.zillowLat)+"/"+str(self.zillowLong)
+        except:
+            print "ZID = "+self.zID
+            print "URL = "+url
+            print "Address = "+self.address
+            print "Lat attemp = "+root[2][1].text
+            self.manual=True
+            raise Exception("Unable to grab Latitude and Longitude")       
         try:
             root[2][2][1].text
+            self.zipCode=int(root[2][2][1].text)
         except:
             print "ZID = "+self.zID
             print "URL = "+url
             print "Address = "+self.address
+            self.manual=True
             raise Exception("Root tree in ET unable to be parsed correctly")
-        self.zipCode=int(root[2][2][1].text)
+        
         
         
 def mortgageEst(buyPrice,lastDate):

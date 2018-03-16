@@ -23,20 +23,16 @@
 
 
 
-import requests
-import urllib2
-import urllib
+import requests,urllib2,urllib
 from residential import resProp
 from bs4 import BeautifulSoup
-import re
-import time
-import pickle
-import cookielib
+import re,time,pickle,cookielib
 from time import sleep
 from StringIO import StringIO
 import gzip
 from browser import pageRequest
-
+import sqlite3
+from decimal import Decimal
 
 
 def printToFile(htmlText,fileName="temp.html"):
@@ -185,7 +181,16 @@ if __name__=="__main__":
     pids.sort()
 
 
+###############################################################################
+#
+#
+#   Opens SQL session
+#  
+#
+###############################################################################
 
+    connection=sqlite3.connect("cobbProps.db")
+    crsr=connection.cursor()
 
 ###############################################################################
 #
@@ -339,6 +344,7 @@ if __name__=="__main__":
         try:
             lastPrice=tempPriceList[0]
             lastDate=tempDateList[0]
+            lastPrice=Decimal(lastPrice.strip('$'))
         except:
             lastPrice="No Last Price"
             lastDate="No Last Date"
@@ -396,18 +402,32 @@ if __name__=="__main__":
         CobbProperties[pid]=resProp(pid,str(address),str(zipCode),str(owner),str(propClass),str(lastPrice),str(lastDate),str(zID))
         print "Property ID: "+str(pid)
         print "Zillow ID: "+str(zID)
+        print "Property class: "+str(propClass)
         print "Current Owner: "+str(owner)
         print "Address: "+str(address)
         print "Last price: "+str(lastPrice)
         print "Last sale: "+str(lastDate)
         
-  
+        try: 
+            sql_command = """INSERT INTO listings ("pid","zID","propClass","owner","address","lastPrice","lastDate") VALUES (%s,%s,%,%s,%s,%s,%s);""" % (str(pid),
+                                                      str(zID),str(propClass),str(owner),
+                                                      str(address),str(lastPrice),str(lastDate))
+        except:
+            sql_command = """INSERT INTO listings VALUES (%s)""" % str(pid)
+        crsr.execute(sql_command)
+        connection.commit()
+        
+        
+        
+        
         sleep(2)
         if len(CobbProperties.keys())%100==0:   
             with open('cobbProps.dat','wb') as h:
                 pickle.dump(CobbProperties,h)
             h.close()
         print len(CobbProperties.keys())
+    
+    connection.close()
 ###############################################################################
 #
 #
